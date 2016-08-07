@@ -1,0 +1,46 @@
+{
+  "name": "nyt-reactions",
+  "version": "1.0.0",
+  "description": "Displaying and saving New York Times articles and using react to control webpage design",
+  "main": "server.js",
+  "engines": {
+    "node": "4.4.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Havamere/NYT-REACTions.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "mongodb",
+    "babel"
+  ],
+  "author": "Kyle Rinehart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Havamere/NYT-REACTions/issues"
+  },
+  "homepage": "https://github.com/Havamere/NYT-REACTions#readme",
+  "dependencies": {
+    "axios": "^0.12.0",
+    "body-parser": "^1.15.2",
+    "core-js": "^2.4.0",
+    "express": "^4.14.0",
+    "mongojs": "^2.3.0",
+    "morgan": "^1.7.0",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.13.1"
+  }
+}
