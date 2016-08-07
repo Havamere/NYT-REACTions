@@ -3,7 +3,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongojs = require('mongojs');
-var helper = require('./app/Components/utils/helpers.js');
 
 // Create Instance of Express
 var app = express();
@@ -40,11 +39,11 @@ app.get('/', function(req, res){
 
 // This is the route we will send POST requests to save each search.
 app.post('/api/', function(req, res){
-  console.log("BODY: " + req.body.location);
+  console.log("BODY: " + req.body);
 
   // Here we'll save the location based on the JSON input. 
   // We'll use Date.now() to always get the current date time
-  db.history.insert({"location": req.body.location, "date": Date.now()}, function(err){
+  db.history.insert({"title": req.body.title, "date": Date.now(), "url": req.body.url}, function(err){
     if(err){
       console.log(err);
     }
