@@ -19744,7 +19744,7 @@
 			console.log(JSON.stringify(this.state) + " is what has been passed.");
 		},
 
-		componentUpdated: function componentUpdated(prevProps, prevState) {
+		componentDidUpdate: function componentDidUpdate(prevProps, prevState) {
 			console.log(prevState);
 			if (prevState.search != this.state.search) {
 				console.log("UPDATED");

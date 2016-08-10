@@ -30,7 +30,7 @@ var Main = React.createClass({
 		console.log(JSON.stringify(this.state) + " is what has been passed.");
 	},
 
-	componentUpdated: function(prevProps, prevState){
+	componentDidUpdate: function(prevProps, prevState){
 		console.log(prevState);
 		if(prevState.search != this.state.search){
 			console.log("UPDATED");
