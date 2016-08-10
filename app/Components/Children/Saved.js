@@ -6,7 +6,7 @@ var Saved = React.createClass({
 
 	// Here we render the function
 	render: function(){
-
+		console.log("Im the start of Saved.");
 		return(
 
 			<div className="panel panel-default">
@@ -23,7 +23,9 @@ var Saved = React.createClass({
 					)}
 				</div>
 			</div>
-
 		)
+		console.log("Im the end of Saved.");
 	}
 });
+
+module.exports = Saved;

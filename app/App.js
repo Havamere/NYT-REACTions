@@ -5,9 +5,10 @@ var ReactDOM = require('react-dom');
 // Include the Main Component
 var Main = require('./Components/Main')
 
+console.log("Attempting to load Main content.");
 // This code here allows us to render our main component (in this case "Main")
 ReactDOM.render(
-
 	<Main />,
 	document.getElementById('app')
 )
+console.log("Attempting to finish loading Main content.");

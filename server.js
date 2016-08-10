@@ -34,24 +34,25 @@ db.on('error', function (err) {
 
 // Main Route. This route will redirect to our rendered React application
 app.get('/', function(req, res){
+	console.log("Im loading the Index page.");
   res.sendFile('./public/index.html');
 });
 
 // This is the route we will send POST requests to save each search.
-app.post('/api/', function(req, res){
-  console.log("BODY: " + req.body);
+// app.post('/api/', function(req, res){
+//   console.log("BODY: " + req.body);
 
-  // Here we'll save the location based on the JSON input. 
-  // We'll use Date.now() to always get the current date time
-  db.history.insert({"title": req.body.title, "date": Date.now(), "url": req.body.url}, function(err){
-    if(err){
-      console.log(err);
-    }
-    else {
-      res.send("Saved Search");
-    }
-  })
-});
+//   // Here we'll save the location based on the JSON input. 
+//   // We'll use Date.now() to always get the current date time
+//   db.history.insert({"title": req.body.title, "date": Date.now(), "url": req.body.url}, function(err){
+//     if(err){
+//       console.log(err);
+//     }
+//     else {
+//       res.send("Saved Search");
+//     }
+//   })
+// });
 
 // -------------------------------------------------
 

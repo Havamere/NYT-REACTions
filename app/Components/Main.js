@@ -15,23 +15,45 @@ var Main = React.createClass({
 	// Here we set a generic state associated with the number of clicks
 	getInitialState: function(){
 		return {
-			search: "",
+			search: {},
 			results: "",
 			saved: []
-		}
+			}
 	},	
 
 	// This function allows childrens to update the parent.
-	setParam: function(parameter){
+	setParam: function(parameters){
+		console.log(parameters);
 		this.setState({
-			search: parameter
+			search: parameters
 		})
+		console.log(JSON.stringify(this.state) + " is what has been passed.");
 	},
 
+	componentUpdated: function(prevProps, prevState){
+		console.log(prevState);
+		if(prevState.search != this.state.search){
+			console.log("UPDATED");
 
+			// Run the query for the address
+			helpers.runQuery(this.state.query, this.state.startDate, this.state.endDate)
+				.then(function(data){
+					console.log(data);
+					if (data != this.state.results)
+					{
+						console.log("articles", data);
+
+						// this.setState({
+						// 	results: data
+						// })
+					};
+				})
+		}
+	},
 
 	// Here we render the function
 	render: function(){
+		console.log("Im the start of Main.");
 
 		return(
 
@@ -74,6 +96,10 @@ var Main = React.createClass({
 
 			</div>
 		)
+		console.log("Im the end of Main.");
 	}
 
 });
+
+// Export the component back for use in other files
+module.exports = Main;
