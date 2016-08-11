@@ -19730,7 +19730,7 @@
 		getInitialState: function getInitialState() {
 			return {
 				search: {},
-				results: "",
+				results: [],
 				saved: []
 			};
 		},
@@ -19748,18 +19748,21 @@
 			console.log(prevState);
 			if (prevState.search != this.state.search) {
 				console.log("UPDATED");
+				var _self = this;
 
 				// Run the query for the address
 				helpers.runQuery(this.state.query, this.state.startDate, this.state.endDate).then(function (data) {
 					console.log(data);
-					if (data != this.state.results) {
-						console.log("articles", data);
+					if (data != _self.state.results) {
+						for (var i = 0; i < data.length; i++) {
+							console.log("article " + i + " " + data[i].headline.main);
 
-						// this.setState({
-						// 	results: data
-						// })
+							this.setState({
+								results: data
+							});
+						}
 					};
-				});
+				}.bind(this));
 			}
 		},
 
@@ -20060,10 +20063,10 @@
 
 		// This function serves our purpose of running the query to The New York Times API. 
 		runQuery: function runQuery(query, startDate, endDate) {
-
-			console.log("Query: " + query + " Start Date: " + startDate + " End Date: " + endDate);
-
 			//URL to ping for NYT articles
+			/*	 	query = "hillary";
+	  	 	startDate = 20160808;
+	  		endDate = 20160809;*/
 			var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 			var authKey = "?api-key=899f9cbbce8c41de9ca37a6bf43a4dd8";
 			var query = "?q=" + query + "";
@@ -20073,7 +20076,17 @@
 			return axios.get(queryURL + authKey + params).then(function (response) {
 
 				console.log(response);
-				//return response.data.results[0].formatted;
+				return response.data.response.docs;
+			});
+		},
+
+		// This function hits our own server to retrieve the record of query results
+		getHistory: function getHistory() {
+
+			return axios.get('/api').then(function (response) {
+
+				console.log(response);
+				return response;
 			});
 		}
 

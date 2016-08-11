@@ -16,7 +16,7 @@ var Main = React.createClass({
 	getInitialState: function(){
 		return {
 			search: {},
-			results: "",
+			results: [],
 			saved: []
 			}
 	},	
@@ -34,20 +34,23 @@ var Main = React.createClass({
 		console.log(prevState);
 		if(prevState.search != this.state.search){
 			console.log("UPDATED");
+			var _self = this;
 
 			// Run the query for the address
 			helpers.runQuery(this.state.query, this.state.startDate, this.state.endDate)
 				.then(function(data){
 					console.log(data);
-					if (data != this.state.results)
+					if (data != _self.state.results)
 					{
-						console.log("articles", data);
+						for (var i = 0; i < data.length; i++) {
+							console.log("article "+i+" "+data[i].headline.main);
 
-						// this.setState({
-						// 	results: data
-						// })
+							this.setState({
+							 	results: data
+							})
+						}
 					};
-				})
+				}.bind(this));
 		}
 	},
 

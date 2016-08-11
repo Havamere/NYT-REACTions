@@ -5,10 +5,10 @@ var helpers = {
 
 	// This function serves our purpose of running the query to The New York Times API. 
 	runQuery: function(query, startDate, endDate){
-
-	 	console.log("Query: "+query+" Start Date: "+startDate+" End Date: "+endDate);
-
 	 	//URL to ping for NYT articles
+/*	 	query = "hillary";
+	 	startDate = 20160808;
+		endDate = 20160809;*/
 	 	var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 		var authKey = "?api-key=899f9cbbce8c41de9ca37a6bf43a4dd8";
 		var query = "?q="+query+"";
@@ -19,21 +19,21 @@ var helpers = {
 	 		.then(function(response){
 
 	 			console.log(response);
-	 			//return response.data.results[0].formatted;
+	 			return response.data.response.docs;
 	 	});
 
 	},
 
-	// // This function hits our own server to retrieve the record of query results
-	// getHistory: function(){
+	// This function hits our own server to retrieve the record of query results
+		getHistory: function(){
 
-	// 	return axios.get('/api')
-	// 		.then(function(response){
+	 	return axios.get('/api')
+	 		.then(function(response){
 
-	// 			console.log(response);
-	// 			return response;
-	// 		});
-	// },
+	 			console.log(response);
+	 			return response;
+	 		});
+		},
 
 	// // This function posts new searches to our database.
 	// postHistory: function(location){
