@@ -7,6 +7,7 @@ var Results = React.createClass({
 	// Here we render the function
 	render: function(){
 		console.log("Im the start of Results.");
+		console.log(this.props.article);
 		return(
 
 			<div className="panel panel-default">

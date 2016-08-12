@@ -40,13 +40,14 @@ var Main = React.createClass({
 			helpers.runQuery(this.state.query, this.state.startDate, this.state.endDate)
 				.then(function(data){
 					console.log(data);
+					console.log(data.length);
 					if (data != _self.state.results)
 					{
 						for (var i = 0; i < data.length; i++) {
 							console.log("article "+i+" "+data[i].headline.main);
 
 							this.setState({
-							 	results: data
+							 	results: this.push(data[i])
 							})
 						}
 					};
