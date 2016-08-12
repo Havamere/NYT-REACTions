@@ -10,11 +10,13 @@ var helpers = {
 	 	startDate = 20160808;
 		endDate = 20160809;*/
 	 	var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-		var authKey = "?api-key=899f9cbbce8c41de9ca37a6bf43a4dd8";
+	 	var otherKey = "899f9cbbce8c41de9ca37a6bf43a4dd8";
+		var authKey = "?api-key=b1b8d8dd6ef341c2a90ee81716c65d96";
 		var query = "?q="+query+"";
 		var startDate = "?begin_date="+startDate+"";
 		var endDate = "?end_date="+endDate+"";
 		var params = query+startDate+endDate;
+		console.log(queryURL+authKey+params);
 	 	return axios.get(queryURL+authKey+params)
 	 		.then(function(response){
 
