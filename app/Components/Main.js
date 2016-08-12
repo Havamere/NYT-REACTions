@@ -41,15 +41,16 @@ var Main = React.createClass({
 				.then(function(data){
 					console.log(data);
 					console.log(data.length);
-					if (data != _self.state.results)
-					{
+					if (data != _self.state.results) {
+						var tempArray = []
 						for (var i = 0; i < data.length; i++) {
 							console.log("article "+i+" "+data[i].headline.main);
 
-							this.setState({
-							 	results: this.push(data[i])
-							})
+							tempArray.push(data[i]);
 						}
+						this.setState({
+						 	results: tempArray
+						})
 					};
 				}.bind(this));
 		}
