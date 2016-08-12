@@ -9,7 +9,8 @@ var Results = React.createClass({
 		console.log("Im the start of Results.");
 		console.log(this.props.article);
 		var articles = [];
-
+		var title = this.props.article.headline.main;
+		console.log(title);
 		for(var i = 0; i < this.props.article.length; i++) {
 			articles.push(<span className="article" key={i}>
 								this.props.article.headline.main + '\n'

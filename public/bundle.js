@@ -19969,7 +19969,8 @@
 			console.log("Im the start of Results.");
 			console.log(this.props.article);
 			var articles = [];
-
+			var title = this.props.article.headline.main;
+			console.log(title);
 			for (var i = 0; i < this.props.article.length; i++) {
 				articles.push(React.createElement(
 					"span",
