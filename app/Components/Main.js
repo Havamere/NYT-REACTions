@@ -87,7 +87,7 @@ var Main = React.createClass({
 
 					<div className="col-md-8 col-md-offset-2">
 				
-						<Results article={this.state.results} />
+						<Results article={this.state.results}/>
 
 					</div>
 
