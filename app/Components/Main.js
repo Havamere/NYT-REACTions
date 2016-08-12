@@ -46,7 +46,11 @@ var Main = React.createClass({
 						for (var i = 0; i < data.length; i++) {
 							console.log("article "+i+" "+data[i].headline.main);
 
-							tempArray.push(data[i]);
+							tempArray.push(data[i].headline.main+"\n"+
+											data[i].web_url+"\n"+
+											data[i].pub_date)+"\n"+
+											"<a href='#'>Save</a>");
+
 						}
 						this.setState({
 						 	results: tempArray

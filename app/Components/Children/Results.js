@@ -25,10 +25,7 @@ var Results = React.createClass({
 					<h3 className="panel-title text-center">Results</h3>
 				</div>
 				<div className="panel-body text-center">
-						<p>{this.props.article.headline.main}</p>
-						<p>{this.props.article.web_url}</p>
-						<p>{this.props.article.pub_date}</p>
-						<a href="#"><button>Save</button></a>
+						<p>{this.props.article}</p>
 				</div>
 			</div>
 		)
