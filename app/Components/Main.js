@@ -35,7 +35,7 @@ var Main = React.createClass({
 		if(prevState.search != this.state.search){
 			console.log("UPDATED");
 			var _self = this;
-
+			console.log(prevState);
 			// Run the query for the address
 			helpers.runQuery(this.state.query, this.state.startDate, this.state.endDate)
 				.then(function(data){
