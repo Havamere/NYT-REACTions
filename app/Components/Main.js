@@ -42,16 +42,16 @@ var Main = React.createClass({
 					console.log(data);
 					console.log(data.length);
 					if (data != _self.state.results) {
-						var tempArray = []
+						var tempArray = [];
 						for (var i = 0; i < data.length; i++) {
-							console.log("article "+i+" "+data[i].headline.main);
-
+							console.log("article "+i+" : "+data[i].headline.main);
 							tempArray.push(data[i].headline.main+"\n"+
 											data[i].web_url+"\n"+
 											data[i].pub_date)+"\n"+
 											"<a href='#'>Save</a>");
 
 						}
+						console.log(tempArray);
 						this.setState({
 						 	results: tempArray
 						})
@@ -63,7 +63,6 @@ var Main = React.createClass({
 	// Here we render the function
 	render: function(){
 		console.log("Im the start of Main.");
-
 		return(
 
 			<div className="container">
