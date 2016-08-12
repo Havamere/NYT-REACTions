@@ -19968,24 +19968,15 @@
 		render: function render() {
 			console.log("Im the start of Results.");
 			console.log(this.props.article);
-			var articles = [];
-			var title = this.props.article.headline.main;
-			console.log(title);
-			for (var i = 0; i < this.props.article.length; i++) {
-				articles.push(React.createElement(
-					"span",
-					{ className: "article", key: i },
-					"this.props.article.headline.main + '\\n' this.props.article.web_url + '\\n' this.props.article.pub_date"
-				) + React.createElement(
-					"a",
-					{ href: "#" },
-					React.createElement(
-						"button",
-						null,
-						"Save"
-					)
-				));
-			}
+			// var articles = [];
+			// for(var i = 0; i < this.props.article.length; i++) {
+			// 	articles.push(<span className="article" key={i}>
+			// 						this.props.article.headline.main + '\n'
+			// 						this.props.article.web_url + '\n'
+			// 						this.props.article.pub_date 
+			// 					</span> +
+			// 					<a href="#"><button>Save</button></a>)
+			// }
 
 			return React.createElement(
 				"div",
@@ -20005,7 +19996,26 @@
 					React.createElement(
 						"p",
 						null,
-						articles
+						this.props.article.headline.main
+					),
+					React.createElement(
+						"p",
+						null,
+						this.props.article.web_url
+					),
+					React.createElement(
+						"p",
+						null,
+						this.props.article.pub_date
+					),
+					React.createElement(
+						"a",
+						{ href: "#" },
+						React.createElement(
+							"button",
+							null,
+							"Save"
+						)
 					)
 				)
 			);
