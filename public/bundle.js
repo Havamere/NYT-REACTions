@@ -19968,6 +19968,24 @@
 		render: function render() {
 			console.log("Im the start of Results.");
 			console.log(this.props.article);
+			var articles = [];
+
+			for (var i = 0; i < this.props.article.length; i++) {
+				articles.push(React.createElement(
+					"span",
+					{ className: "article", key: i },
+					"this.props.article.headline.main + '\\n' this.props.article.web_url + '\\n' this.props.article.pub_date"
+				) + React.createElement(
+					"a",
+					{ href: "#" },
+					React.createElement(
+						"button",
+						null,
+						"Save"
+					)
+				));
+			}
+
 			return React.createElement(
 				"div",
 				{ className: "panel panel-default" },
@@ -19986,16 +20004,7 @@
 					React.createElement(
 						"p",
 						null,
-						this.props.article,
-						React.createElement(
-							"a",
-							{ href: "#" },
-							React.createElement(
-								"button",
-								null,
-								"Save"
-							)
-						)
+						articles
 					)
 				)
 			);
