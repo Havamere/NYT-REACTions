@@ -10,21 +10,12 @@ var Results = React.createClass({
 		console.log(this.props.article);
 
 		var articleList = this.props.article.map(function(article) {
+							return 	
+								article.map(function(element) {
+									return <p>{element}</p>
+								})
 							
-							article.map(function(element) {
-								return <p>{element}</p>
-							})
-							
-						})
-		// var articles = [];
-		// for(var i = 0; i < this.props.article.length; i++) {
-		// 	articles.push(<span className="article" key={i}>
-		// 						this.props.article.headline.main + '\n'
-		// 						this.props.article.web_url + '\n'
-		// 						this.props.article.pub_date 
-		// 					</span> +
-		// 					<a href="#"><button>Save</button></a>)
-		// }
+						});
 
 		return(
 
