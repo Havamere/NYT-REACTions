@@ -47,13 +47,13 @@ var Main = React.createClass({
 						for (var i = 0; i < data.length; i++) {
 							console.log("article "+i+" : "+data[i].headline.main);
 
-							relaventData = data[i].headline.main+
-											data[i].web_url+
-											data[i].pub_date)+
-											"<a href='#'>Save</a>";
+							// relaventData = data[i].headline.main+
+							// 				data[i].web_url+
+							// 				data[i].pub_date)+
+							// 				"<a href='#'>Save</a>";
 
-							tempArray.push(relaventData);
-							relaventData = "";
+							tempArray.push(data[i].headline.main);
+							//relaventData = "";
 
 						}
 						console.log(tempArray);
