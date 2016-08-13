@@ -9,13 +9,14 @@ var Results = React.createClass({
 		console.log("Im the start of Results.");
 		console.log(this.props.article);
 
-		var articleList = this.props.article.map(function(article) {
-							return 	
-								article.map(function(element) {
-									return <p>{element}</p>
-								})
-							
-						});
+		var articleList = function(articleSet) {
+							for (var i = 0; i < articleSet.length; i++) {
+								for (var j = 0; j < i.length; j++) {
+									document.write(j + "\n");
+								}
+								document.write("<a href='#'><button>Save this article</button></a>");
+							}
+						}
 
 		return(
 
@@ -24,7 +25,7 @@ var Results = React.createClass({
 					<h3 className="panel-title text-center">Results</h3>
 				</div>
 				<div className="panel-body text-center">
-						<p>{articleList}</p>
+						<p>{articleList(this.props.article)}</p>
 				</div>
 			</div>
 		)

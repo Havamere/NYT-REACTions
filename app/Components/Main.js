@@ -49,8 +49,7 @@ var Main = React.createClass({
 
 							relaventData = [data[i].headline.main,
 											data[i].web_url,
-											data[i].pub_date,
-											"<a href='#'>Save</a>"];
+											data[i].pub_date];
 
 							tempArray.push(relaventData);
 							relaventData = [];
