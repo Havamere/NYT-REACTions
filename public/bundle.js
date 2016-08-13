@@ -19715,7 +19715,7 @@
 
 	// Include all of the sub-components
 	var Search = __webpack_require__(160);
-	var Results = __webpack_require__(161);
+	var Results = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Children/Results\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var Saved = __webpack_require__(162);
 
 	// Import helper functions similar to ORM's
@@ -19955,63 +19955,7 @@
 	module.exports = Search;
 
 /***/ },
-/* 161 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	// Include React 
-	var React = __webpack_require__(1);
-
-	// This is the results component
-	var Results = React.createClass({
-		displayName: "Results",
-
-
-		// Here we render the function
-		render: function render() {
-			console.log("Im the start of Results.");
-			console.log(this.props.article);
-
-			var articleList = function articleList(articleSet) {
-				for (var i = 0; i < articleSet.length; i++) {
-					for (var j = 0; j < i.length; j++) {
-						document.write(j + "\n");
-					}
-					document.write("<a href='#'><button>Save this article</button></a>");
-				}
-			};
-
-			return React.createElement(
-				"div",
-				{ className: "panel panel-default" },
-				React.createElement(
-					"div",
-					{ className: "panel-heading" },
-					React.createElement(
-						"h3",
-						{ className: "panel-title text-center" },
-						"Results"
-					)
-				),
-				React.createElement(
-					"div",
-					{ className: "panel-body text-center" },
-					React.createElement(
-						"p",
-						null,
-						articleList(this.props.article)
-					)
-				)
-			);
-			console.log("Im the start of Results.");
-		}
-	});
-
-	// Export the component back for use in other files
-	module.exports = Results;
-
-/***/ },
+/* 161 */,
 /* 162 */
 /***/ function(module, exports, __webpack_require__) {
 

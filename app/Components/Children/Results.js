@@ -12,9 +12,9 @@ var Results = React.createClass({
 		var articleList = function(articleSet) {
 							for (var i = 0; i < articleSet.length; i++) {
 								for (var j = 0; j < i.length; j++) {
-									document.write(j + "\n");
+									return j + "\n");
 								}
-								document.write("<a href='#'><button>Save this article</button></a>");
+								html.appendChild("<a href='#'><button>Save this article</button></a>");
 							}
 						}
 
