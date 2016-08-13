@@ -8,6 +8,14 @@ var Results = React.createClass({
 	render: function(){
 		console.log("Im the start of Results.");
 		console.log(this.props.article);
+
+		var articleList = this.props.article.map(function(article) {
+							
+							article.map(function(element) {
+								return <p>{element}</p>
+							})
+							
+						})
 		// var articles = [];
 		// for(var i = 0; i < this.props.article.length; i++) {
 		// 	articles.push(<span className="article" key={i}>
@@ -25,7 +33,7 @@ var Results = React.createClass({
 					<h3 className="panel-title text-center">Results</h3>
 				</div>
 				<div className="panel-body text-center">
-						<p>{this.props.article}</p>
+						<p>{articleList}</p>
 				</div>
 			</div>
 		)

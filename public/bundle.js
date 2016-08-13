@@ -19756,14 +19756,14 @@
 					console.log(data.length);
 					if (data != _self.state.results) {
 						var tempArray = [];
-						var relaventData = "";
+						var relaventData = [];
 						for (var i = 0; i < data.length; i++) {
 							console.log("article " + i + " : " + data[i].headline.main);
 
-							relaventData = data[i].headline.main + data[i].web_url + data[i].pub_date + "<a href='#'>Save</a>";
+							relaventData = [data[i].headline.main, data[i].web_url, data[i].pub_date, "<a href='#'>Save</a>"];
 
 							tempArray.push(relaventData);
-							relaventData = "";
+							relaventData = [];
 						}
 						console.log(tempArray);
 						this.setState({
@@ -19972,6 +19972,17 @@
 		render: function render() {
 			console.log("Im the start of Results.");
 			console.log(this.props.article);
+
+			var articleList = this.props.article.map(function (article) {
+
+				article.map(function (element) {
+					return React.createElement(
+						"p",
+						null,
+						element
+					);
+				});
+			});
 			// var articles = [];
 			// for(var i = 0; i < this.props.article.length; i++) {
 			// 	articles.push(<span className="article" key={i}>
@@ -20000,7 +20011,7 @@
 					React.createElement(
 						"p",
 						null,
-						this.props.article
+						articleList
 					)
 				)
 			);
