@@ -68,7 +68,7 @@ app.post('/api/saved', function(req, res){
     var date = req.body.date;
     var url = req.body.url;
 
-    newArticle = save.(function(err, doc){
+    newArticle = save(function(err, doc){
     	if(err){
     		console.log(err);
     	} else {
